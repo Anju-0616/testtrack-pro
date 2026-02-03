@@ -3,8 +3,8 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("TestTrack Pro API is running 🚀");
-});
+const healthRoutes = require("./routes/health.routes");
+
+app.use("/api", healthRoutes);
 
 module.exports = app;
